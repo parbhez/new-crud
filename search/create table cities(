@@ -1,0 +1,21 @@
+create table cities(
+	id int(11) auto_increment,
+	name varchar(30),
+	primary key(id)
+);
+insert into cities(name) 
+values('feni'),
+('comilla'),
+('chittagong'),
+('Dhaka');
+
+create table people (
+	id int(11) auto_increment primary key,
+	first_name varchar(20) not null,
+	last_name varchar(20) not null,
+	email varchar(50),
+	city_id int(11),
+	foreign key(city_id) references cities(id)
+);
+
+insert into people(first_name,last_name,email,city_id) values("masud","parbhez","masud@gmail.com",2);
